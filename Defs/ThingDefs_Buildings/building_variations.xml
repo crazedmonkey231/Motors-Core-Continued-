@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Civilian_Car</defName>
+        <label>Civilian Car</label>
+        <description>A simple car. Many people use this to commute to work.</description>
+        <graphicData>
+            <texPath>yy/Dacia_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Dacia_east</uiIconPath>
+        <size>(4,2)</size>
+        <costList>
+            <Steel>200</Steel>
+            <ComponentIndustrial>10</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Beauty>10</Beauty>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.55</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>RHResearch_Vehicles</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Armored_Car</defName>
+        <label>Armored Car</label>
+        <description>"I've got the engine,\nUnder the hood,\nYou'll never catch me,\nman..,\nI'm running good."</description>
+        <graphicData>
+            <texPath>yy/combatCar_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/combatCar_east</uiIconPath>
+        <size>(4,2)</size>
+        <costList>
+            <Steel>500</Steel>
+            <ComponentIndustrial>15</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <Beauty>-10</Beauty>
+            <WorkToBuild>1800</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_SUV</defName>
+        <label>SUV</label>
+        <description>Great for soccer moms, or dads who wanted a truck but need to take their kids to school.</description>
+        <graphicData>
+            <texPath>yy/UAZ_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/UAZ_east</uiIconPath>
+        <size>(4,2)</size>
+        <costList>
+            <Steel>250</Steel>
+            <ComponentIndustrial>15</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>450</MaxHitPoints>
+            <Beauty>10</Beauty>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.55</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>RHResearch_Vehicles</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Truck</defName>
+        <label>Truck</label>
+        <description>Great for hauling things, doing work around the house, and you know the best part? Tailgate parties!</description>
+        <graphicData>
+            <texPath>yy/PickUpTruck_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/PickUpTruck_east</uiIconPath>
+        <size>(5,3)</size>
+        <costList>
+            <Steel>250</Steel>
+            <ComponentIndustrial>15</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>450</MaxHitPoints>
+            <Beauty>10</Beauty>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.55</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>RHResearch_Vehicles</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Utility_ForkLift</defName>
+        <label>ForkLift</label>
+        <description>"Let's ride!" - Sgt. Avery Johnson (HALO:REACH)</description>
+        <graphicData>
+            <texPath>yy/Forklift_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,3)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Forklift_east</uiIconPath>
+        <size>(3,2)</size>
+        <costList>
+            <Steel>120</Steel>
+            <ComponentIndustrial>5</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Beauty>10</Beauty>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.55</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>RHResearch_Vehicles</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Motorcycle</defName>
+        <label>Motorcycle</label>
+        <description>"A full-open throttle,\nKickin' it in gear,\nAdios baby,\nYou know,\nI'm outta' here.\nZoom, Zoom"</description>
+        <graphicData>
+            <texPath>yy/Motorcycle_R1200GS_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.5,2.5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Motorcycle_R1200GS_east</uiIconPath>
+        <size>(2,1)</size>
+        <costList>
+            <Steel>120</Steel>
+            <ComponentIndustrial>5</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Beauty>10</Beauty>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.55</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>RHResearch_Vehicles</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Bicycle</defName>
+        <label>Bicycle</label>
+        <description>"Bicycle, bicycle, bicycle\nI want to ride my bicycle, bicycle, bicycle\nI want to ride my bicycle\nI want to ride my bike\nI want to ride my bicycle\nI want to ride it where I like"\n-Bicycle Race (QUEEN)</description>
+        <graphicData>
+            <texPath>yy/PushBike_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.5,2.5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/PushBike_east</uiIconPath>
+        <size>(2,1)</size>
+        <costList>
+            <Steel>20</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>10</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Bicycle_BMX</defName>
+        <label>BMX Bicycle</label>
+        <description>These were cool, in what, like the 90's?</description>
+        <graphicData>
+            <texPath>yy/Bike/RimBMX_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.5,2.5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Bike/RimBMX_east</uiIconPath>
+        <size>(2,1)</size>
+        <costList>
+            <Steel>20</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>10</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Bicycle_RimBike</defName>
+        <label>RimBike</label>
+        <description>Just a regular oldschool bike.</description>
+        <graphicData>
+            <texPath>yy/Bike/RimBike_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2.5,2.5)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Bike/RimBike_east</uiIconPath>
+        <size>(2,1)</size>
+        <costList>
+            <Steel>20</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>10</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase">
+        <defName>Basic_Skateboard</defName>
+        <label>Basic Skateboard</label>
+        <description>A method of transportation commonly found in cities.</description>
+        <graphicData>
+            <texPath>yy/Rimboard_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Rimboard_east</uiIconPath>
+        <size>(1,1)</size>
+        <costList>
+            <WoodLog>5</WoodLog>
+            <Steel>5</Steel>
+        </costList>
+        <statBases>
+            <MaxHitPoints>10</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBaseBoat">
+        <defName>Basic_Boat</defName>
+        <label>Basic Boat</label>
+        <description>Lets go fishing!</description>
+        <graphicData>
+            <texPath>yy/Boat/Canoe_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <uiIconPath>yy/Boat/Canoe_east</uiIconPath>
+        <size>(2,1)</size>
+        <costList>
+            <WoodLog>5</WoodLog>
+            <Steel>5</Steel>
+        </costList>
+        <statBases>
+            <MaxHitPoints>10</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <WorkToBuild>250</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+    </ThingDef>
+</Defs>

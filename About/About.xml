@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+   <name>Motors Core (Continued)</name>
+   <author>Crazedmonkey231</author>
+   <supportedVersions>
+      <li>1.3</li>
+   </supportedVersions>
+   <packageId>com.crazedmonkey231.motors</packageId>
+   
+   <loadAfter>
+      <li>roolo.giddyupcore</li>
+	  <li>roolo.giddyuprideandroll</li>
+   </loadAfter>
+	<modDependencies>
+		<li>
+			<packageId>roolo.giddyupcore</packageId>
+			<displayName>giddy up core</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/1216999901</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>roolo.giddyuprideandroll</packageId>
+			<displayName>Giddy-up! Ride and Roll</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/1331961995</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	
+   <description>Core mod for vehicles originally developed by YAYO, update and maintained by myself.</description>
+</ModMetaData>

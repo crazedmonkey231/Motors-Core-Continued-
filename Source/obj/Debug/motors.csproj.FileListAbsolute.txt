@@ -1,0 +1,12 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\Assemblies\motors.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\Assemblies\motors.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\source\obj\Debug\motors.csprojAssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\source\obj\Debug\motors.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\source\obj\Debug\motors.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Motors\source\obj\Debug\motors.pdb
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\source\obj\Debug\motors.csproj.CoreCompileInputs.cache
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\Assemblies\MotorsCoreContinued.dll
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\Assemblies\MotorsCoreContinued.pdb
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\source\obj\Debug\MotorsCoreContinued.dll
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\source\obj\Debug\MotorsCoreContinued.pdb
+F:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Motors Core (Continued)\Source\obj\Debug\motors.csprojAssemblyReference.cache

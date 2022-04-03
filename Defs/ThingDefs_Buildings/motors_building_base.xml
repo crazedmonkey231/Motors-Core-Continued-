@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase" Name="MotorBuildingBase" Abstract="True">
+        <thingClass>motors.Building_Motor</thingClass>
+        <category>Building</category>
+        <altitudeLayer>Building</altitudeLayer>
+        <pathCost>40</pathCost>
+        <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+        <passability>PassThroughOnly</passability>
+        <canOverlapZones>false</canOverlapZones>
+        <building>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <researchPrerequisites>
+            <li>Smithing</li>
+        </researchPrerequisites>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <uiIconScale>0.7</uiIconScale>
+        <fillPercent>0.5</fillPercent>
+        <placingDraggableDimensions>1</placingDraggableDimensions>
+        <rotatable>false</rotatable>
+        <selectable>true</selectable>
+        <neverMultiSelect>true</neverMultiSelect>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <repairEffect>ConstructDirt</repairEffect>
+        <castEdgeShadows>true</castEdgeShadows>
+		<tickerType>Normal</tickerType>
+		<designationCategory>Motors</designationCategory>
+    </ThingDef>
+	
+    <ThingDef ParentName="MotorBuildingBase" Name="MotorBuildingBaseBoat" Abstract="True">
+		<terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef Name="BaseMotor" Abstract="True">
+		<thingClass>Pawn</thingClass>
+        <category>Pawn</category>
+        <selectable>true</selectable>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Pawn</altitudeLayer>
+        <useHitPoints>false</useHitPoints>
+        <hasTooltip>true</hasTooltip>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <statBases>
+            <PsychicSensitivity>0</PsychicSensitivity>
+            <ToxicSensitivity>0</ToxicSensitivity>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>200</ComfyTemperatureMax>
+            <MeatAmount>0</MeatAmount>
+			<SwimSpeed>0</SwimSpeed>
+        </statBases>
+        <tradeNeverStack>true</tradeNeverStack>
+        <inspectorTabs>
+            <li>ITab_Pawn_Needs</li>
+            <li>ITab_Pawn_Character</li>
+            <li>ITab_Pawn_Guest</li>
+            <li>ITab_Pawn_Prisoner</li>
+            <li>ITab_Pawn_FormingCaravan</li>
+            <li>ITab_Pawn_Gear</li>
+        </inspectorTabs>
+		<comps>
+            <li>
+                <compClass>CompAttachBase</compClass>
+            </li>
+			
+			<li Class="GiddyUpCore.CompProperties_Mount">
+				<isException>true</isException>
+			</li>
+		</comps>
+        <race>
+            <fleshType>Mechanoid</fleshType>
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+            <foodType>None</foodType>
+            <lifeExpectancy>0</lifeExpectancy>
+            <bloodDef>Filth_MachineBits</bloodDef>
+            <thinkTreeMain>motor</thinkTreeMain>
+            <!-- dont edit -->
+            <thinkTreeConstant>motorConstant</thinkTreeConstant>
+            <!-- dont edit -->
+            <!--<nameOnNuzzleChance>0.5</nameOnNuzzleChance>-->
+            <trainability>Intermediate</trainability>
+            <body>MechanicalCentipede</body>
+            <lifeStageAges Inherit="False">
+                <li>
+                    <def>MechanoidFullyFormed</def>
+                    <minAge>0</minAge>
+                    <soundWounded>BulletImpact_Metal</soundWounded>
+                    <soundDeath>BulletImpact_Metal</soundDeath>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+            <herdAnimal>false</herdAnimal>
+            <predator>false</predator>
+        </race>
+		<tradeTags>
+            <li>AnimalUncommon</li>
+            <li>AnimalFighter</li>
+        </tradeTags>
+		<drawGUIOverlay>true</drawGUIOverlay>
+    </ThingDef>
+	
+    <ThingDef ParentName="BaseMotor" Name="BaseMotorRidable" Abstract="True">
+        <comps>
+			<li Class="motors.CompProperties_Motor">
+			</li>
+        </comps>
+    </ThingDef>	
+	
+	<LifeStageDef>
+        <defName>Boat</defName>
+        <label>adult</label>
+        <visible>true</visible>
+        <reproductive>false</reproductive>
+        <milkable>false</milkable>
+        <shearable>false</shearable>
+        <modExtensions>
+        <li Class="TerrainMovement.TerrainMovementPawnKindGraphics">
+            <pawnSpeedStat>SwimSpeed</pawnSpeedStat>
+            <bodyGraphicData>
+                <texPath>yy/Boat/Canoe</texPath>
+                <drawSize>(2,2)</drawSize>
+            </bodyGraphicData>
+        </li>
+        </modExtensions>
+    </LifeStageDef>
+	
+	<ThingDef ParentName="BaseMotorRidable" Name="BaseMotorRidableAquatic" Abstract="true">
+		<terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+		<passability>Impassable</passability>
+		<statBases>
+			  <MoveSpeed>0</MoveSpeed>
+			  <SwimSpeed>6</SwimSpeed>
+		</statBases>
+		<race>
+            <lifeStageAges Inherit="False">
+                <li>
+                    <def>Boat</def>
+                    <minAge>0</minAge>
+                    <soundWounded>BulletImpact_Metal</soundWounded>
+                    <soundDeath>BulletImpact_Metal</soundDeath>
+                </li>
+            </lifeStageAges>
+		</race>
+		<modExtensions>
+			  <!-- This makes things stay in the water -->
+			  <li Class="Swimming.AquaticExtension"/>
+		</modExtensions>
+	</ThingDef>
+	
+    <ThingDef ParentName="BaseMotorRidable" Name="BaseMotorRefuelable" Abstract="True">
+        <comps>
+			<li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Refuelable">
+                <fuelConsumptionRate>2</fuelConsumptionRate>
+                <fuelCapacity>50.0</fuelCapacity>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Chemfuel</li>
+                    </thingDefs>
+                </fuelFilter>
+                <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+            </li>
+        </comps>
+    </ThingDef>	
+
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_Civilian_Car</defName>
+        <label>Civilian_Car</label>
+        <description>A simple car. Many people use this to commute to work.</description>
+        <statBases>
+            <Mass>930</Mass>
+            <MoveSpeed>18.0</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>3000</MarketValue>
+            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.00</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_Armored_Car</defName>
+        <label>Armored Car</label>
+        <description>"I've got the engine,\nUnder the hood,\nYou'll never catch me,\nman..,\nI'm running good."</description>
+        <statBases>
+            <Mass>1800</Mass>
+            <MoveSpeed>15</MoveSpeed>
+            <Flammability>0.1</Flammability>
+            <MarketValue>2500</MarketValue>
+            <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.00</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_SUV</defName>
+        <label>SUV</label>
+        <description>Great for soccer moms, or dads who wanted a truck but need to take their kids to school.</description>
+        <statBases>
+            <Mass>1700</Mass>
+            <MoveSpeed>16.0</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>3000</MarketValue>
+            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.00</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_Truck</defName>
+        <label>SUV</label>
+        <description>Great for hauling things, doing work around the house, and you know the best part? Tailgate parties!</description>
+        <statBases>
+            <Mass>1200</Mass>
+            <MoveSpeed>10.0</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>3000</MarketValue>
+            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.00</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>
+	
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_Utility_ForkLift</defName>
+        <label>Forklift</label>
+        <description>"Let's ride!" - Sgt. Avery Johnson (HALO:REACH)</description>
+        <statBases>
+            <Mass>100</Mass>
+            <MoveSpeed>3.0</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>1500</MarketValue>
+            <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.1</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>		
+
+    <ThingDef ParentName="BaseMotorRefuelable">
+        <defName>motor_Basic_Motorcycle</defName>
+        <label>Motorcycle</label>
+        <description>"A full-open throttle,\nKickin' it in gear,\nAdios baby,\nYou know,\nI'm outta' here.\nZoom, Zoom"</description>
+        <statBases>
+            <Mass>180</Mass>
+            <MoveSpeed>21.0</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>3000</MarketValue>
+            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.00</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>5</baseHealthScale>
+        </race>
+    </ThingDef>	
+
+    <ThingDef ParentName="BaseMotorRidable">
+        <defName>motor_Basic_Bicycle</defName>
+        <label>Bicycle</label>
+        <description>"Bicycle, bicycle, bicycle\nI want to ride my bicycle, bicycle, bicycle\nI want to ride my bicycle\nI want to ride my bike\nI want to ride my bicycle\nI want to ride it where I like"\n-Bicycle Race (QUEEN)</description>
+        <statBases>
+            <Mass>15</Mass>
+            <MoveSpeed>5</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>200</MarketValue>
+            <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.01</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+        </race>
+    </ThingDef>	
+
+    <ThingDef ParentName="BaseMotorRidable">
+        <defName>motor_Basic_Bicycle_BMX</defName>
+        <label>BMX Bicycle</label>
+        <description>These were cool, in what, like the 90's?</description>
+        <statBases>
+            <Mass>15</Mass>
+            <MoveSpeed>5</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>200</MarketValue>
+            <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.01</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+        </race>
+    </ThingDef>	
+	
+    <ThingDef ParentName="BaseMotorRidable">
+        <defName>motor_Basic_Bicycle_RimBike</defName>
+        <label>RimBike</label>
+        <description>Just a regular oldschool bike.</description>
+        <statBases>
+            <Mass>15</Mass>
+            <MoveSpeed>5</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>200</MarketValue>
+            <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.01</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+        </race>
+    </ThingDef>	
+	
+    <ThingDef ParentName="BaseMotorRidable">
+        <defName>motor_Basic_Skateboard</defName>
+        <label>Basic Skateboard</label>
+        <description>A method of transportation commonly found in cities.</description>
+        <statBases>
+            <Mass>5</Mass>
+            <MoveSpeed>5</MoveSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>10</MarketValue>
+            <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.01</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+        </race>
+    </ThingDef>	
+
+    <ThingDef ParentName="BaseMotorRidableAquatic">
+        <defName>motor_Basic_Boat</defName>
+        <label>Basic Boat</label>
+        <description>Lets go fishing!</description>
+        <statBases>
+            <Mass>5</Mass>
+            <MoveSpeed>0</MoveSpeed>
+			<SwimSpeed>20</SwimSpeed>
+            <Flammability>0.2</Flammability>
+            <MarketValue>10</MarketValue>
+            <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.01</ArmorRating_Heat>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>1</baseHealthScale>
+        </race>
+    </ThingDef>	
+</Defs>

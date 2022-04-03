@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+		<!--
+		<northOffsetCSV>0,0.1,0</northOffsetCSV> Use this value if you want pawns rendered above view
+		<northOffsetCSV>0,-0.1,0</northOffsetCSV> Use this value if you want pawns rendered below view
+		
+		CSV Offset FORMAT:
+		      LEFT/RIGHT, LAYER/Rendering Height, UP/DOWN
+		-->
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Armored_Car"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>-0.3,0.1,0.5</northOffsetCSV>
+                        <southOffsetCSV>0.4,0.1,0.8</southOffsetCSV>
+                        <eastOffsetCSV>0,-0.1,0.3</eastOffsetCSV>
+                        <westOffsetCSV>0,-0.1,0.3</westOffsetCSV>
+                    </li>
+                </value>
+            </li>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "Basic_Civilian_Car"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        
+                        <northOffsetCSV>-0.5,-0.5,0.3</northOffsetCSV>
+                        <southOffsetCSV>0,-0.5,0.3</southOffsetCSV>
+                        <eastOffsetCSV>0,-0.005,0.3</eastOffsetCSV>
+                        <westOffsetCSV>0,-0.005,0.3</westOffsetCSV>
+                    </li>
+                </value>
+            </li>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_SUV"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,-0.1,0</northOffsetCSV>
+                        <southOffsetCSV>0,-0.1,0</southOffsetCSV>
+                        <eastOffsetCSV>0,-0.005,0</eastOffsetCSV>
+                        <westOffsetCSV>0,-0.005,0</westOffsetCSV>
+                    </li>
+                </value>
+            </li>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Truck"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,-0.5,0.3</northOffsetCSV>
+                        <southOffsetCSV>0,-0.5,0.3</southOffsetCSV>
+                        <eastOffsetCSV>0.3,-0.001,-0.3</eastOffsetCSV>
+                        <westOffsetCSV>-0.3,-0.001,-0.3</westOffsetCSV>
+                    </li>
+                </value>
+            </li>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Utility_ForkLift"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,-0.5,0</northOffsetCSV>
+                        <southOffsetCSV>0,-0.5,0.3</southOffsetCSV>
+                        <eastOffsetCSV>-0.5,-0.1,0.2</eastOffsetCSV>
+                        <westOffsetCSV>0.5,-0.1,0.2</westOffsetCSV>
+                    </li>
+                </value>
+            </li>	
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Motorcycle"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,0.1,0.3</northOffsetCSV>
+                        <southOffsetCSV>0,-0.1,0.3</southOffsetCSV>
+                        <eastOffsetCSV>0,0.1,0.3</eastOffsetCSV>
+                        <westOffsetCSV>0,0.1,0.3</westOffsetCSV>
+                    </li>
+                </value>
+            </li>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Bicycle" or defName = "motor_Basic_Bicycle_BMX" or defName = "motor_Basic_Bicycle_RimBike" ]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,0.1,0.5</northOffsetCSV>
+                        <southOffsetCSV>0,0.1,1</southOffsetCSV>
+                        <eastOffsetCSV>0,0.1,0.4</eastOffsetCSV>
+                        <westOffsetCSV>0,0.1,0.4</westOffsetCSV>
+                    </li>
+                </value>
+            </li>	
+            <li Class="PatchOperationAddModExtension">
+                <xpath>*/ThingDef[ defName = "motor_Basic_Skateboard"]</xpath>
+                <value>
+                    <li Class="motors.DrawingOffsetPatch">
+                        <northOffsetCSV>0,0.1,0.6</northOffsetCSV>
+                        <southOffsetCSV>0, 0.1,0.6</southOffsetCSV>
+                        <eastOffsetCSV>0,0.1,0.6</eastOffsetCSV>
+                        <westOffsetCSV>0,0.1,0.6</westOffsetCSV>
+                    </li>
+                </value>
+            </li>			
+        </operations>
+    </Operation>
+</Patch>

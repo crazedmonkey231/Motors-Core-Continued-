@@ -1,0 +1,6 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\bin\Release\yayoShooting.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\bin\Release\yayoShooting.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\obj\Release\yayoShooting.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\obj\Release\yayoShooting.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\obj\Release\yayoShooting.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Yayo Shooting\source\obj\Release\yayoShooting.csprojAssemblyReference.cache

@@ -1,0 +1,1 @@
+Dimensions currently must be same on the x and y for example 512x512

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThinkTreeDef>
+        <defName>motor</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                </li>
+                <!-- Do a queued job -->
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                </li>
+                <!-- Idle error -->
+                <li Class="motors.JobGiver_IdleMotor" />
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+    <ThinkTreeDef>
+        <defName>motorConstant</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                </li>
+                <!-- Do a queued job -->
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>Idle</tagToGive>
+                </li>
+                <!-- Idle error -->
+                <li Class="motors.JobGiver_IdleMotor" />
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+</Defs>

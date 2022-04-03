@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <PawnKindDef Name="MotorKindBase" Abstract="True">
+        <ecoSystemWeight>1.5</ecoSystemWeight>
+        <wildGroupSize>1~4</wildGroupSize>
+		<combatPower>250</combatPower>
+    </PawnKindDef>
+</Defs>
