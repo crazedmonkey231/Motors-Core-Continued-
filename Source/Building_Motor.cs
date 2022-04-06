@@ -17,7 +17,7 @@ namespace motors
             PawnKindDef kind = PawnKindDef.Named($"motor_{this.def.defName}");
             Pawn pawn = PawnGenerator.GeneratePawn(kind, this.Faction);
             IntVec3 loc = this.Position;
-            GenSpawn.Spawn(pawn, loc, map, Rot4.Random, WipeMode.Vanish, false);
+            GenSpawn.Spawn(pawn, loc, map, Rot4.East, WipeMode.Vanish, false);
         }
     }
 }

@@ -1,15 +1,14 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace GiddyUpRideAndRoll
+namespace motors
 {
     [DefOf]
-    static class GU_RR_DefOf
+    static class RideOrWait_DefOf
     {
+
         public static JobDef RideToJob;
         public static JobDef WaitForRider;
 
-        //vanilla
-        public static RoomRoleDef Barn;
     }
 }

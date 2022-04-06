@@ -1,0 +1,14 @@
+  <Defs>
+	  <JobDef>
+		<defName>RideToJob</defName>
+		<driverClass>motors.JobDriver_RideToJob</driverClass>
+		<reportString>Riding to job</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	  </JobDef>
+	  <JobDef>
+		<defName>WaitForRider</defName>
+		<driverClass>motors.JobDriver_WaitForRider</driverClass>
+		<reportString>Waiting for rider</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	  </JobDef>
+  </Defs>

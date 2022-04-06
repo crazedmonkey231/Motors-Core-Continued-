@@ -17,11 +17,13 @@
 			<displayName>giddy up core</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/1216999901</steamWorkshopUrl>
 		</li>
+		<!--
 		<li>
 			<packageId>roolo.giddyuprideandroll</packageId>
 			<displayName>Giddy-up! Ride and Roll</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/1331961995</steamWorkshopUrl>
 		</li>
+		-->
 	</modDependencies>
 	
    <description>Core mod for vehicles originally developed by YAYO, update and maintained by myself.</description>

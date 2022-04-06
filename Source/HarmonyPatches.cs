@@ -4,7 +4,6 @@ using System.Reflection;
 using HarmonyLib;
 using Verse;
 using RimWorld;
-using GiddyUpRideAndRoll;
 using GiddyUpCore.Jobs;
 using GiddyUpCore.Storage;
 using RimWorld.Planet;
@@ -38,12 +37,12 @@ namespace motors
         static void Postfix(JobDriver_Mounted __instance)
         {
             ExtendedPawnData pawnData = GiddyUpCore.Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.pawn);
-            
+
             if (!__instance.Rider.Drafted && __instance.pawn.Faction == Faction.OfPlayer)
             {
                 if (pawnData.ownedBy != null && !__instance.interrupted && __instance.Rider.GetCaravan() == null)
                 {
-                    __instance.pawn.jobs.jobQueue.EnqueueFirst(new Job(GU_RR_DefOf.WaitForRider, pawnData.ownedBy)
+                    __instance.pawn.jobs.jobQueue.EnqueueFirst(new Job(RideOrWait_DefOf.WaitForRider, pawnData.ownedBy)
                     {
                         //expiryInterval = 1,
                         //checkOverrideOnExpire = true,
@@ -59,9 +58,11 @@ namespace motors
                 }
             }
 
+
+            Log.Message("Creating job");
             if (__instance.pawn.def.defName.ToLower().Contains("motor_"))
             {
-                __instance.pawn.jobs.jobQueue.EnqueueLast(new Job(JobDefOf.Wait));
+                __instance.pawn.jobs.jobQueue.EnqueueLast(new Job(RideOrWait_DefOf.RideToJob));
             }
         }
     }
@@ -69,7 +70,7 @@ namespace motors
     [HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor")]
     static class FloatMenuMakerMap_ChoicesAtFor
     {
-        static void Pretfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> __result)
+        static void Postfix(Vector3 clickPos, Pawn pawn, ref List<FloatMenuOption> __result)
         {
             __result.RemoveDuplicates<FloatMenuOption>();
         }
